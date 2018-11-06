@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/calculator")
 public class Calculator extends HttpServlet {
@@ -23,13 +24,26 @@ public class Calculator extends HttpServlet {
         Double n1 = Double.valueOf(number1);
         Double n2 = Double.valueOf(number2);
 
-        System.out.println("Dodawanie: " + (n1 + n2));
-        System.out.println("Odejmowanie: " + (n1 - n2));
-        System.out.println("Mnożenie: " + (n1 * n2));
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+        PrintWriter printWriter = response.getWriter();
+        printWriter.println("Dodawanie: " + (n1 + n2));
+        printWriter.println("<br>");
+        printWriter.println("Odejmowanie: " + (n1 - n2));
+        printWriter.println("<br>");
+        printWriter.println("Mnożenie: " + (n1 * n2));
+        printWriter.println("<br>");
+
+//        System.out.println("Dodawanie: " + (n1 + n2));
+//        System.out.println("Odejmowanie: " + (n1 - n2));
+//        System.out.println("Mnożenie: " + (n1 * n2));
 //        String number1 = request.getParameter("2");
 //        String number2 = request.getParameter("5");
 //        System.out.println(number1 + number2);
 
 
+    }
+
+    private void printWriter(double v) {
     }
 }
