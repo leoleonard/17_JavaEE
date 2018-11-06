@@ -27,9 +27,9 @@ public class Welcome extends HttpServlet {
         printWriter.println("Cześć, wiem, że nazywasz się " + firstName + " " + lastName);
 
         if (age != null) {
-            printWriter.println(" Też kiedyś miałem " + age + "lat");
+            printWriter.println(". Też kiedyś miałem " + age + "lat");
         } else {
-            printWriter.print(" Ja też nie lubię chwalić się wiekiem");
+            printWriter.print(". Ja też nie lubię chwalić się wiekiem");
         }
     }
 }
